@@ -4,6 +4,7 @@ import styles from './styles.js'
 // Socket.IO로 웹 소켓 서버에 접속하기 --- (※1)
 import socketio from 'socket.io-client'
 import background from "./bb.jpg"
+import "./a.css"
 
 const socket = socketio.connect('http://3.34.142.21:80')
 // 입력 양식 컴포넌트 --- (※2)
@@ -35,15 +36,15 @@ class ChatForm extends React.Component {
   render () {
     return (
       <div style={styles.form} >
-        메시지:
-        <input value={this.state.message} ref = {this.state.searchRef} style={{width:"80%"}}
+        <font color="white" style={{width:"10%",display:"inline-block"}}>메시지:</font>
+        <input value={this.state.message} ref = {this.state.searchRef} style={{width:"79%"}}
           onChange={e => this.messageChanged(e)} 
           onKeyPress={
             (e)=>{if(e.key==='Enter'){
               this.send()
             }
           }}/>
-        <button onClick={this.send} >전송</button>
+        <button onClick={this.send} style={{width:"10%"}}>전송</button>
       </div>
     )
   }
@@ -104,12 +105,19 @@ class ChatApp extends React.Component {
     return (
       <div>
         {window.sessionStorage.getItem("name")===null ?
-        <div>
-          <input onChange={(e)=>{this.nameChange(e)}} value={this.state.name}></input> <button onClick={this.submit}>submit</button>
-        </div>
+          <div style={{
+            position: "absolute",
+            backgroundColor:"#000000", width:"100%", height:"100%"
+          }}>
+            <div style={{position: "absolute",
+              top: "45%",
+              left: "45%",}}>
+            <font color="white">NAME : </font><input onChange={(e)=>{this.nameChange(e)}} value={this.state.name}></input> <button onClick={this.submit}>submit</button>
+            </div>
+          </div>
         :
         <div style={{border: "1px solid black"}}>
-          <div style={{overflow:"scroll", width:"100%", height:`${chartHeight}px`, backgroundImage: `url(${background})`}}>{messages}</div>
+          <div style={{overflow:"scroll", width:"100%", height:`${chartHeight}px`, backgroundImage: `url(${background})`} }class="container">{messages}</div>
           <ChatForm/>
         </div>
         }

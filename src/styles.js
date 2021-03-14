@@ -6,6 +6,7 @@ const styles = {
     padding: 12
   },
   form: {
+    backgroundColor: '#000000',
     border: '1px solid gray',
     padding: 12
   },
@@ -32,7 +33,7 @@ const styles = {
   msg2: {
     color: 'white',
     float: 'right'
-  }
+  },
 }
 
 export default styles

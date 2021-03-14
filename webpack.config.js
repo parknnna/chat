@@ -14,13 +14,18 @@ module.exports = {
         options: {
           presets: ['es2015', 'react']
         }
-      },{
+      },
+      {
         test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
           },
         ]
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ]
   }

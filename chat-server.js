@@ -5,7 +5,7 @@
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
-const portNo = 80
+const portNo = 3000
 server.listen(portNo, () => {
   console.log('서버 실행 완료:', 'http://localhost:' + portNo)
 })
