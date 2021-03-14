@@ -5,7 +5,7 @@ import styles from './styles.js'
 import socketio from 'socket.io-client'
 import background from "./bb.jpg"
 
-const socket = socketio.connect('http://localhost:3001')
+const socket = socketio.connect('http://localhost:80')
 // 입력 양식 컴포넌트 --- (※2)
 class ChatForm extends React.Component {
   inputRef;
