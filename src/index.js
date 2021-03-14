@@ -117,7 +117,13 @@ class ChatApp extends React.Component {
           </div>
         :
         <div style={{border: "1px solid black"}}>
-          <div style={{overflow:"scroll", width:"100%", height:`${chartHeight}px`, backgroundImage: `url(${background})`} }class="container">{messages}</div>
+          <div style={{
+            overflow:"scroll", 
+            width:"100%",
+            height:`${chartHeight}px`, 
+            backgroundImage: `url(${background})`,
+            overflowX: "hidden",
+          }} class="container">{messages}</div>
           <ChatForm/>
         </div>
         }
